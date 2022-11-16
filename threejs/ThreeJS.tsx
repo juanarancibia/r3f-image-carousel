@@ -1,6 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Color, Vector3 } from "three";
-import BaseGround from "./BaseGround";
+import Background from "./Background";
 import CameraController from "./camera-controller";
 import WallpaperFrame from "./WallpaperFrame";
 
@@ -25,15 +24,15 @@ const ThreeJS = () => {
   return (
     <div id="canvas-container" style={{ height: "100vh" }}>
       <Canvas>
-        <color attach="background" args={[0.945, 0.949, 243]} />
+        <Background />
         <CameraController />
-        {/* <ambientLight color={"0x202020"} intensity={0.01} /> */}
+        <ambientLight color={"0x202020"} intensity={1} />
         {/* <hemisphereLight
           args={["0xffffbb", "0x080820", 1]}
           color={color}
           groundColor={groundColor}
         /> */}
-        <pointLight color={"0x404040"} intensity={1} position={[0, 1, 0]} />
+        <pointLight color={"0xffffff"} intensity={1} position={[0, 1, 0]} />
         {/* <gridHelper args={[100, 20]} />
 
         {/* <BaseGround /> */}
