@@ -28,7 +28,9 @@ const CameraController = () => {
     };
   }, [camera, gl]);
 
-  useFrame(() => controls.update());
+  useFrame(() => {
+    if (controls) controls.update();
+  });
 
   return null;
 };
